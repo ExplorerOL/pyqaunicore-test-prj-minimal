@@ -1,6 +1,8 @@
 import json
 from http import HTTPStatus
 
+from pyqaunicore.assertions import assert_soft
+
 from api.rest.rest_client import RESTClient
 from fixtures.fixtures_rest import (  # noqa: F401
     http_client,
@@ -27,8 +29,10 @@ class TestExamplesREST:
         response = rest_client_anonim.users.get_single_user(user_id=USER_ID)
         # ASSERT
         body = json.loads(response.text)
-        assert body['data']['id'] == USER_ID, 'Поле id не соответствует ожидаемому'
-        assert body['data'].get('email'), 'Отсутствует поле email'
+        with assert_soft:
+            assert body['data']['id'] == USER_ID, 'Поле id не соответствует ожидаемому'
+        with assert_soft:
+            assert body['data'].get('email'), 'Отсутствует поле email'
 
     def test_get_single_user_data_with_wrong_id(self, rest_client_anonim: RESTClient):  # noqa: F811
         # ARRANGE
@@ -47,9 +51,10 @@ class TestExamplesREST:
         response = rest_client_anonim.users.get_list_users(page=PAGE_NUM)
         # ASSERT
         body = json.loads(response.text)
-        assert (
-            body['page'] == PAGE_NUM
-        ), f'Фактическое зачение поля page {body["page"]} не соответствует ожидаемому {PAGE_NUM}'
-
+        with assert_soft:
+            assert (
+                body['page'] == PAGE_NUM
+            ), f'Фактическое зачение поля page {body["page"]} не соответствует ожидаемому {PAGE_NUM}'
         users_data = body['data']
-        assert len(users_data) == 6, 'Количество пользователей не соответствует ожидаемому'
+        with assert_soft:
+            assert len(users_data) == 6, 'Количество пользователей не соответствует ожидаемому'

@@ -1,4 +1,7 @@
+from itertools import zip_longest
+
 import pytest
+from pyqaunicore.assertions import assert_soft
 from pyqaunicore.generators.generators import GeneratorsNumber
 
 from db.db_client.db_client import DBClient
@@ -37,6 +40,8 @@ class TestExamplesDB:
         assert len(created_users) == len(
             actual_users_raw
         ), 'Количество пользователей в БД не равно ожидаемому!'
-        for expected_user, actual_user in list(zip(created_users, actual_users)):
-            assert expected_user.name == actual_user.name
-            assert expected_user.age == actual_user.age
+        for expected_user, actual_user in list(zip_longest(created_users, actual_users)):
+            with assert_soft:
+                assert expected_user.name == actual_user.name
+            with assert_soft:
+                assert expected_user.age == actual_user.age
