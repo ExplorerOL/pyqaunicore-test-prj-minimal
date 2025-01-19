@@ -1,0 +1,51 @@
+from dataclasses import dataclass
+
+from pyqaunicore.operations.file_operations import FileOperations
+
+from fixtures.fixtures_ui import page_auth, page_products  # noqa: F401
+from support.loggers.testrun_logger import logger
+from ui.pages.page_auth import PageAuth
+
+
+@dataclass(frozen=True, slots=True)
+class AuthCreds:
+    username: str
+    password: str
+
+
+creds_locked_user = AuthCreds(username='locked_out_user', password='secret_sauce')
+creds_standart_user = AuthCreds(username='standard_user', password='secret_sauce')
+
+
+class TestExamplesVisual:
+    def test_visual_auth_page(self, page_auth: PageAuth, assert_snapshot):  # noqa: F811
+        """Визуальный тест страницы авторизации"""
+        # ARRANGE
+        page_auth.navigate()
+        # ACT
+        screenshot_page_auth = page_auth.make_screenshot()
+        # ASSERT
+        screenshot_name = FileOperations.generate_screenshot_name()
+        logger.debug('Имя базового скриншота = ' + screenshot_name)
+        assert_snapshot(
+            screenshot_page_auth,
+            threshold=0.12,
+            name=screenshot_name,
+            fail_fast=False,
+        )
+
+    def test_visual_auth_page_failed(self, page_auth: PageAuth, assert_snapshot):  # noqa: F811
+        """Провальный тест страницы авторизации"""
+        # ARRANGE
+        page_auth.navigate()
+        # ACT
+        screenshot_page_auth = page_auth.make_screenshot()
+        # ASSERT
+        screenshot_name = FileOperations.generate_screenshot_name()
+        logger.debug('Имя базового скриншота = ' + screenshot_name)
+        assert_snapshot(
+            screenshot_page_auth,
+            threshold=0.12,
+            name=screenshot_name,
+            fail_fast=False,
+        )
