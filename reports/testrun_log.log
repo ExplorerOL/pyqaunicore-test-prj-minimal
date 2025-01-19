@@ -1,232 +1,86 @@
-2025-01-19 14:08:26.635 | DEBUG    | support.loggers.testrun_logger:<module>:8 - Логгирование с уровнем TRACE начато с помощью логгера LOGURU_LOGGER
-2025-01-19 14:08:26.636 | INFO     | pyqaunicore.config.config_core:logger:26 - Задан новый логгер ядра: <pyqaunicore.loggers.logger_loguru.LoggerLoguru object at 0x0000012C93E8A950>
-2025-01-19 14:08:26.679 | DEBUG    | config.config_init:init_config:19 - Конфигурация базового url: https://www.saucedemo.com/
-2025-01-19 14:08:31.218 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_db.py::TestExamplesDB::test_verify_data_in_db:25 >>>>>
-2025-01-19 14:08:31.219 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: faker.contrib.pytest.plugin::_session_faker
-2025-01-19 14:08:31.314 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_base_url.plugin::base_url
-2025-01-19 14:08:31.314 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_base_url.plugin::_verify_url
-2025-01-19 14:08:31.317 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: _pytest.fixtures::pytestconfig
-2025-01-19 14:08:31.317 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::delete_output_dir
-2025-01-19 14:08:31.320 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_db::db_adapter
-2025-01-19 14:08:31.320 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:__init__:24 - Инициализация адаптера БД: 'sqlite:///.database.db', debug: False
-2025-01-19 14:08:31.331 | SUCCESS  | pyqaunicore.db.sql_db_adapter_sqlmodel:__init__:36 - Адаптер БД успешно инициализирован!
-2025-01-19 14:08:31.331 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_db::db_client
-2025-01-19 14:08:31.331 | DEBUG    | db.db_client.db_client:__init__:13 - Инициализация клиента БД
-2025-01-19 14:08:31.331 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_db::create_empty_user_table
-2025-01-19 14:08:31.331 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_sql:56 - Выполнение SQL-запроса: '\n                            CREATE TABLE IF NOT EXISTS "users" (\n                                "id"  INTEGER,\n                                "name"  TEXT NOT NULL,\n                                "age" INTEGER,\n                                "created_at" INTEGER,\n                                "is_deleted" BOOLEAN,\n                                "is_blocked" BOOLEAN,\n                                PRIMARY KEY("id")\n                            );\n                            '
-2025-01-19 14:08:31.331 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_sql:57 - Данные SQL-запроса: None
-2025-01-19 14:08:31.333 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:40 - Выполнение запроса к БД: CREATE TABLE IF NOT EXISTS "users" (
-                                "id"  INTEGER,
-                                "name"  TEXT NOT NULL,
-                                "age" INTEGER,
-                                "created_at" INTEGER,
-                                "is_deleted" BOOLEAN,
-                                "is_blocked" BOOLEAN,
-                                PRIMARY KEY("id")
-                            );
-2025-01-19 14:08:31.333 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:41 - Параметры запроса к БД: {}
-2025-01-19 14:08:31.334 | SUCCESS  | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_sql:63 - SQL-запрос успешно выполнен!
-2025-01-19 14:08:31.334 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_truncate:137 - Выполнение SQL-запроса TRUNCATE с помощью объекта statement
-2025-01-19 14:08:31.335 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:40 - Выполнение запроса к БД: DELETE FROM users
-2025-01-19 14:08:31.335 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:41 - Параметры запроса к БД: {}
-2025-01-19 14:08:31.336 | SUCCESS  | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_truncate:139 - Удалено 8 строк!
-2025-01-19 14:08:31.358 | SUCCESS  | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_truncate:141 - SQL-запрос успешно выполнен!
-2025-01-19 14:08:31.361 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_insert:99 - Выполнение SQL-запроса INSERT с помощью объекта statement
-2025-01-19 14:08:31.362 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:40 - Выполнение запроса к БД: INSERT INTO users (id, name, age, created_at, is_deleted, is_blocked) VALUES (:id, :name, :age, :created_at, :is_deleted, :is_blocked)
-2025-01-19 14:08:31.362 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:41 - Параметры запроса к БД: {}
-2025-01-19 14:08:31.367 | SUCCESS  | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_insert:103 - SQL-запрос успешно выполнен!
-2025-01-19 14:08:31.368 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_select:80 - Выполнение SQL-запроса SELECT с помощью объекта statement
-2025-01-19 14:08:31.368 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:40 - Выполнение запроса к БД: SELECT users.id, users.name, users.age, users.created_at, users.is_deleted, users.is_blocked 
-FROM users
-2025-01-19 14:08:31.369 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:_before_execute:41 - Параметры запроса к БД: {}
-2025-01-19 14:08:31.369 | SUCCESS  | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_select:82 - SQL-запрос успешно выполнен!
-2025-01-19 14:08:31.370 | DEBUG    | pyqaunicore.db.sql_db_adapter_sqlmodel:exec_select:85 - Результат SQL-запроса: [DBModelInputUser(created_at=1737284911, is_deleted=False, name='User0', id=1, age=20, is_blocked=False), DBModelInputUser(created_at=1737284911, is_deleted=False, name='User1', id=2, age=21, is_blocked=False)]
-2025-01-19 14:08:31.370 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:31.374 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_db.py::TestExamplesDB::test_verify_data_in_db:25 #####
-2025-01-19 14:08:31.374 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_rest.py::TestExamplesREST::test_auth_successfull:12 >>>>>
-2025-01-19 14:08:31.375 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_rest::http_req_sender
-2025-01-19 14:08:31.375 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:__init__:23 - Инициализация отправителя HTTP-запросов на основе библиотеки Requests
-2025-01-19 14:08:31.375 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_rest::http_client
-2025-01-19 14:08:31.375 | DEBUG    | pyqaunicore.api.rest.http_client:__init__:22 - Инициализация HTTP-клиента
-2025-01-19 14:08:31.375 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_rest::rest_client_anonim
-2025-01-19 14:08:31.377 | DEBUG    | pyqaunicore.api.rest.http_client:post:123 - Отправка POST запроса на api/login | Тело запроса: {"email": "eve.holt@reqres.in", "password": "cityslicka"} | Файлы: None | Куки: None | Заголовки: {'Content-type': 'application/json'}
-2025-01-19 14:08:31.911 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:send_request:84 - Код ответа: 200 | Тело ответа: {"token":"QpwL5tke4Pnpja7X4"}
-2025-01-19 14:08:31.911 | DEBUG    | api.rest.rest_client_login:login:30 - Полученные куки: {}
-2025-01-19 14:08:31.912 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:31.914 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_rest.py::TestExamplesREST::test_auth_successfull:12 #####
-2025-01-19 14:08:31.915 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 >>>>>
-2025-01-19 14:08:31.916 | DEBUG    | pyqaunicore.api.rest.http_client:get:73 - Отправка GET запроса на api/users/10 | Куки: None | Заголовки: None
-2025-01-19 14:08:32.059 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:send_request:84 - Код ответа: 200 | Тело ответа: {"data":{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
-2025-01-19 14:08:32.061 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:32.063 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 #####
-2025-01-19 14:08:32.064 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data_with_wrong_id:32 >>>>>
-2025-01-19 14:08:32.065 | DEBUG    | pyqaunicore.api.rest.http_client:get:73 - Отправка GET запроса на api/users/10000 | Куки: None | Заголовки: None
-2025-01-19 14:08:32.213 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:send_request:84 - Код ответа: 404 | Тело ответа: {}
-2025-01-19 14:08:32.214 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:32.216 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data_with_wrong_id:32 #####
-2025-01-19 14:08:32.218 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_list:42 >>>>>
-2025-01-19 14:08:32.219 | DEBUG    | pyqaunicore.api.rest.http_client:get:73 - Отправка GET запроса на api/users?page=2 | Куки: None | Заголовки: None
-2025-01-19 14:08:32.288 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:send_request:84 - Код ответа: 200 | Тело ответа: {"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
-2025-01-19 14:08:32.288 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:32.293 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_list:42 #####
-2025-01-19 14:08:32.294 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ui.py::TestExamplesUI::test_auth_locked_user[browser_name=chromium]:19 >>>>>
-2025-01-19 14:08:32.294 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::browser_type_launch_args
-2025-01-19 14:08:32.294 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::playwright
-2025-01-19 14:08:32.650 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: _pytest.fixtures::get_direct_param_fixture_func
-2025-01-19 14:08:32.650 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::browser_type
-2025-01-19 14:08:32.651 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::launch_browser
-2025-01-19 14:08:32.651 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::browser
-2025-01-19 14:08:32.851 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::device
-2025-01-19 14:08:32.851 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_pw_artifacts_folder
-2025-01-19 14:08:32.854 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::browser_context_args
-2025-01-19 14:08:32.854 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:32.856 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:32.857 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:32.857 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:32.915 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:33.038 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:35.478 | DEBUG    | pyqaunicore.ui.pages.page_base:verify_url:129 - Проверка url в адресной строке браузера
-2025-01-19 14:08:35.498 | DEBUG    | pyqaunicore.ui.pages.page_base:verify_title:140 - Проверка названия вкладки в адресной строке браузера
-2025-01-19 14:08:35.515 | DEBUG    | pyqaunicore.ui.primitives.primitive_base:verify_is_visible:623 - Проверка видимости примитива 'Надпись' с именем 'Надпись об ошибке авторизации'
-2025-01-19 14:08:35.551 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:35.676 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:35.677 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:35.678 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ui.py::TestExamplesUI::test_auth_locked_user[browser_name=chromium]:19 #####
-2025-01-19 14:08:35.679 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ui.py::TestExamplesUI::test_auth_standart_user[browser_name=chromium]:33 >>>>>
-2025-01-19 14:08:35.679 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:35.680 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:35.680 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:35.680 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:35.736 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:35.853 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:35.854 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_products
-2025-01-19 14:08:38.392 | DEBUG    | pyqaunicore.ui.pages.page_base:verify_url:129 - Проверка url в адресной строке браузера
-2025-01-19 14:08:38.412 | DEBUG    | pyqaunicore.ui.pages.page_base:verify_title:140 - Проверка названия вкладки в адресной строке браузера
-2025-01-19 14:08:38.431 | DEBUG    | pyqaunicore.ui.primitives.primitive_base:verify_is_visible:623 - Проверка видимости примитива 'Надпись' с именем 'Надпись названия магазина'
-2025-01-19 14:08:38.464 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:38.566 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:38.568 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:38.569 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ui.py::TestExamplesUI::test_auth_standart_user[browser_name=chromium]:33 #####
-2025-01-19 14:08:38.570 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ui.py::TestExamplesUI::test_product_card_data[browser_name=chromium]:47 >>>>>
-2025-01-19 14:08:38.570 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:38.571 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:38.571 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:38.571 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:38.610 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:38.723 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:38.723 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_products
-2025-01-19 14:08:41.111 | DEBUG    | pyqaunicore.ui.primitives.primitive_base:verify_is_visible:623 - Проверка видимости примитива 'Контейнер' с именем 'Неназванный примитив'
-2025-01-19 14:08:41.182 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:41.281 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:41.283 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:41.283 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ui.py::TestExamplesUI::test_product_card_data[browser_name=chromium]:47 #####
-2025-01-19 14:08:41.284 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ui.py::TestExamplesUI::test_visible_products_count[browser_name=chromium]:65 >>>>>
-2025-01-19 14:08:41.285 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:41.285 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:41.285 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:41.285 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:41.327 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:41.439 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:41.440 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_products
-2025-01-19 14:08:43.876 | INFO     | test_examples_ui:test_visible_products_count:76 - Количество видимых карточек товаров: 6
-2025-01-19 14:08:43.876 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:43.981 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:43.982 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:43.983 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ui.py::TestExamplesUI::test_visible_products_count[browser_name=chromium]:65 #####
-2025-01-19 14:08:43.984 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ui.py::TestExamplesUI::test_get_all_product_cards[browser_name=chromium]:81 >>>>>
-2025-01-19 14:08:43.985 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:43.985 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:43.985 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:43.986 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:44.045 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:44.158 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:44.158 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_products
-2025-01-19 14:08:46.628 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:46.730 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:46.732 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:46.733 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ui.py::TestExamplesUI::test_get_all_product_cards[browser_name=chromium]:81 #####
-2025-01-19 14:08:46.733 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ui.py::TestExamplesUI::test_logout_using_menu[browser_name=chromium]:102 >>>>>
-2025-01-19 14:08:46.734 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:46.734 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:46.734 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:46.734 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:46.776 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:46.884 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:46.884 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_products
-2025-01-19 14:08:49.954 | DEBUG    | pyqaunicore.ui.pages.page_base:verify_url:129 - Проверка url в адресной строке браузера
-2025-01-19 14:08:49.975 | DEBUG    | pyqaunicore.ui.pages.page_base:verify_title:140 - Проверка названия вкладки в адресной строке браузера
-2025-01-19 14:08:49.990 | DEBUG    | pyqaunicore.ui.primitives.primitive_base:verify_is_visible:623 - Проверка видимости примитива 'Поле ввода' с именем 'Поле ввода имени пользователя'
-2025-01-19 14:08:50.008 | DEBUG    | pyqaunicore.ui.primitives.primitive_base:verify_is_visible:623 - Проверка видимости примитива 'Поле ввода' с именем 'Поле ввода пароля'
-2025-01-19 14:08:50.023 | DEBUG    | pyqaunicore.ui.primitives.primitive_base:verify_is_visible:623 - Проверка видимости примитива 'Кнопка' с именем 'Кнопка входа'
-2025-01-19 14:08:50.041 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:50.180 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:50.181 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:50.182 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ui.py::TestExamplesUI::test_logout_using_menu[browser_name=chromium]:102 #####
-2025-01-19 14:08:50.182 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_visual.py::TestExamplesVisual::test_visual_auth_page[browser_name=chromium]:20 >>>>>
-2025-01-19 14:08:50.184 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:50.184 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:50.184 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:50.185 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:50.229 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:50.336 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:50.337 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright_visual.plugin::assert_snapshot
-2025-01-19 14:08:52.691 | DEBUG    | test_examples_visual:test_visual_auth_page:29 - Имя базового скриншота = test-visual-auth-page-browser-name-chromium.png
-2025-01-19 14:08:53.676 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:53.769 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:53.771 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:53.772 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_visual.py::TestExamplesVisual::test_visual_auth_page[browser_name=chromium]:20 #####
-2025-01-19 14:08:53.773 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_visual.py::TestExamplesVisual::test_visual_auth_page_failed[browser_name=chromium]:36 >>>>>
-2025-01-19 14:08:53.774 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::output_path
-2025-01-19 14:08:53.774 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:53.774 | FIXTURE  | _pytest.fixtures:call_fixture_func:900 - Фикстура (setup): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:53.775 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::context
-2025-01-19 14:08:53.813 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright.pytest_playwright::page
-2025-01-19 14:08:53.924 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ui::page_auth
-2025-01-19 14:08:53.924 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: pytest_playwright_visual.plugin::assert_snapshot
-2025-01-19 14:08:56.259 | DEBUG    | test_examples_visual:test_visual_auth_page_failed:45 - Имя базового скриншота = test-visual-auth-page-failed-browser-name-chromium.png
-2025-01-19 14:08:57.243 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:57.333 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::new_context
-2025-01-19 14:08:57.334 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_artifacts_recorder
-2025-01-19 14:08:57.335 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_visual.py::TestExamplesVisual::test_visual_auth_page_failed[browser_name=chromium]:36 #####
-2025-01-19 14:08:57.336 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ws.py::TestExamplesWS::test_get_echo_answer:11 >>>>>
-2025-01-19 14:08:57.336 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Фикстура: fixtures.fixtures_ws::ws_client_anonim
-2025-01-19 14:08:57.336 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:__init__:23 - Создание Websocket-клиента на основе библиотеки Websockets
-2025-01-19 14:08:57.336 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:__init__:32 - Создан клиент для uri=wss://echo.websocket.org/echo
-2025-01-19 14:08:57.336 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:__init__:23 - Создание Websocket-клиента на основе библиотеки Websockets
-2025-01-19 14:08:57.337 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:__init__:32 - Создан клиент для uri=wss://echo.websocket.org/events
-2025-01-19 14:08:57.337 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:84 - Получение сообщения по websocket
-2025-01-19 14:08:57.337 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_get_connection:40 - Получение соединения по websocket
-2025-01-19 14:08:57.337 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_open_connection:50 - Установка соединения по websocket по адресу wss://echo.websocket.org/echo
-2025-01-19 14:08:57.337 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_open_connection:67 - Заголовки: None
-2025-01-19 14:08:57.534 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:87 - Получено сообщение: 'Request served by 1781505b56ee58'
-2025-01-19 14:08:57.534 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:84 - Получение сообщения по websocket
-2025-01-19 14:08:57.534 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_get_connection:40 - Получение соединения по websocket
-2025-01-19 14:08:57.534 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_open_connection:50 - Установка соединения по websocket по адресу wss://echo.websocket.org/events
-2025-01-19 14:08:57.534 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_open_connection:67 - Заголовки: None
-2025-01-19 14:08:57.738 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:87 - Получено сообщение: 'Request served by 1781505b56ee58'
-2025-01-19 14:08:57.738 | DEBUG    | test_examples_ws:test_get_echo_answer:18 - 6кrЛяAc
-2025-01-19 14:08:57.742 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:send_msg:75 - Отправка сообщения по websocket по адресу 'wss://echo.websocket.org/echo'
-2025-01-19 14:08:57.742 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:send_msg:76 - Данные сообщения '6кrЛяAc'
-2025-01-19 14:08:57.743 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_get_connection:40 - Получение соединения по websocket
-2025-01-19 14:08:57.743 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:84 - Получение сообщения по websocket
-2025-01-19 14:08:57.743 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_get_connection:40 - Получение соединения по websocket
-2025-01-19 14:08:57.804 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:87 - Получено сообщение: '6кrЛяAc'
-2025-01-19 14:08:57.804 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:57.807 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ws.py::TestExamplesWS::test_get_echo_answer:11 #####
-2025-01-19 14:08:57.808 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> Начало теста: tests/test_examples_ws.py::TestExamplesWS::test_get_last_event:24 >>>>>
-2025-01-19 14:08:57.808 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:send_msg:75 - Отправка сообщения по websocket по адресу 'wss://echo.websocket.org/events'
-2025-01-19 14:08:57.808 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:send_msg:76 - Данные сообщения '2022-01-01 01:01:01+00:00'
-2025-01-19 14:08:57.808 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_get_connection:40 - Получение соединения по websocket
-2025-01-19 14:08:57.809 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:84 - Получение сообщения по websocket
-2025-01-19 14:08:57.809 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:_get_connection:40 - Получение соединения по websocket
-2025-01-19 14:08:57.871 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:receive_msg:87 - Получено сообщение: '2022-01-01 01:01:01+00:00'
-2025-01-19 14:08:57.871 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Результат теста: PASSED =====
-2025-01-19 14:08:58.025 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::browser
-2025-01-19 14:08:58.027 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::_pw_artifacts_folder
-2025-01-19 14:08:58.042 | FIXTURE  | _pytest.fixtures:_teardown_yield_fixture:916 - Фикстура (teardown): pytest_playwright.pytest_playwright::playwright
-2025-01-19 14:08:58.043 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:__del__:29 - Закрытие HTTP-сессии
-2025-01-19 14:08:58.045 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:__del__:36 - Закрытие HTTP-сессии перед удалением клиента
-2025-01-19 14:08:58.045 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:close_connection:91 - Закрытие соединения по websocket
-2025-01-19 14:08:58.106 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:__del__:36 - Закрытие HTTP-сессии перед удалением клиента
-2025-01-19 14:08:58.106 | DEBUG    | pyqaunicore.api.ws.ws_client_websockets:close_connection:91 - Закрытие соединения по websocket
-2025-01-19 14:08:58.170 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### Конец теста: tests/test_examples_ws.py::TestExamplesWS::test_get_last_event:24 #####
+2025-01-19 14:22:09,727 INFO ������������ � ������� ������� LOGGING_LOGGER
+2025-01-19 14:22:09,727 INFO ����� ����� ������ ����: <pyqaunicore.loggers.logger_logging.LoggerLogging object at 0x000001BB9C6ACA10>
+2025-01-19 14:22:09,762 DEBUG ������������ �������� url: https://www.saucedemo.com/
+2025-01-19 14:22:13,894 INFO >>>>> ������ �����: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 >>>>>
+2025-01-19 14:22:13,895 INFO ��������: faker.contrib.pytest.plugin::_session_faker
+2025-01-19 14:22:13,898 DEBUG Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-19 14:22:13,906 DEBUG Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-19 14:22:13,908 DEBUG Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-19 14:22:13,914 DEBUG Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-19 14:22:13,916 DEBUG Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-19 14:22:13,921 DEBUG Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-19 14:22:13,922 DEBUG Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-19 14:22:13,923 DEBUG Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-19 14:22:13,924 DEBUG Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-19 14:22:13,928 DEBUG Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-19 14:22:13,929 DEBUG Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-19 14:22:13,934 DEBUG Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-19 14:22:13,935 DEBUG Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-19 14:22:13,936 DEBUG Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-19 14:22:13,937 DEBUG Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-19 14:22:13,941 DEBUG Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-19 14:22:13,941 DEBUG Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-19 14:22:13,946 DEBUG Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-19 14:22:13,947 DEBUG Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-19 14:22:13,947 DEBUG Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-19 14:22:13,948 DEBUG Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-19 14:22:13,949 DEBUG Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-19 14:22:13,950 DEBUG Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-19 14:22:13,956 DEBUG Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-19 14:22:13,957 DEBUG Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-19 14:22:13,958 DEBUG Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-19 14:22:13,959 DEBUG Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-19 14:22:13,963 DEBUG Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-19 14:22:13,964 DEBUG Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-19 14:22:13,968 DEBUG Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-19 14:22:13,968 DEBUG Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-19 14:22:13,968 DEBUG Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-19 14:22:13,969 DEBUG Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-19 14:22:13,970 DEBUG Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-19 14:22:13,971 DEBUG Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-19 14:22:13,979 DEBUG Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-19 14:22:13,983 DEBUG Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-19 14:22:13,992 DEBUG Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-19 14:22:13,994 DEBUG Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-19 14:22:13,994 DEBUG Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-19 14:22:13,994 DEBUG Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-19 14:22:13,994 DEBUG Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-19 14:22:14,000 DEBUG Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-19 14:22:14,002 DEBUG Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-19 14:22:14,002 DEBUG �������� (setup) <FixtureDef argname='_session_faker' scope='session' baseid=''> ����������� 0.107035 ������
+2025-01-19 14:22:14,002 INFO ��������: pytest_base_url.plugin::base_url
+2025-01-19 14:22:14,002 DEBUG �������� (setup) <FixtureDef argname='base_url' scope='session' baseid=''> ����������� 0.000113 ������
+2025-01-19 14:22:14,002 INFO ��������: pytest_base_url.plugin::_verify_url
+2025-01-19 14:22:14,002 DEBUG �������� (setup) <FixtureDef argname='_verify_url' scope='session' baseid=''> ����������� 0.000178 ������
+2025-01-19 14:22:14,003 INFO ��������: _pytest.fixtures::pytestconfig
+2025-01-19 14:22:14,003 DEBUG �������� (setup) <FixtureDef argname='pytestconfig' scope='session' baseid=''> ����������� 0.000228 ������
+2025-01-19 14:22:14,003 INFO ��������: pytest_playwright.pytest_playwright::delete_output_dir
+2025-01-19 14:22:14,004 DEBUG �������� (setup) <FixtureDef argname='delete_output_dir' scope='session' baseid=''> ����������� 0.001313 ������
+2025-01-19 14:22:14,004 INFO ��������: fixtures.fixtures_rest::http_req_sender
+2025-01-19 14:22:14,005 DEBUG ������������� ����������� HTTP-�������� �� ������ ���������� Requests
+2025-01-19 14:22:14,005 DEBUG �������� (setup) <FixtureDef argname='http_req_sender' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000334 ������
+2025-01-19 14:22:14,005 INFO ��������: fixtures.fixtures_rest::http_client
+2025-01-19 14:22:14,005 DEBUG ������������� HTTP-�������
+2025-01-19 14:22:14,005 DEBUG �������� (setup) <FixtureDef argname='http_client' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000182 ������
+2025-01-19 14:22:14,005 INFO ��������: fixtures.fixtures_rest::rest_client_anonim
+2025-01-19 14:22:14,005 DEBUG �������� (setup) <FixtureDef argname='rest_client_anonim' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000135 ������
+2025-01-19 14:22:14,006 DEBUG �����: api.rest.rest_client_users -> RESTClientUsers -> get_single_user � �����������: (<api.rest.rest_client_users.RESTClientUsers object at 0x000001BB9CA574D0>,) {'user_id': 10}
+2025-01-19 14:22:14,006 DEBUG �������� GET ������� �� api/users/10 | ����: None | ���������: None
+2025-01-19 14:22:14,008 DEBUG Starting new HTTPS connection (1): reqres.in:443
+2025-01-19 14:22:14,347 DEBUG https://reqres.in:443 "GET /api/users/10 HTTP/1.1" 200 None
+2025-01-19 14:22:14,347 DEBUG ��� ������: 200 | ���� ������: {"data":{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
+2025-01-19 14:22:14,353 DEBUG ===== ��������� �����: PASSED =====
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='rest_client_anonim' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000004 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='rest_client_anonim' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000002 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='http_client' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000003 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='http_client' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000003 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='http_req_sender' scope='session' baseid='tests/test_examples_rest.py'> ����������� 0.000005 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='delete_output_dir' scope='session' baseid=''> ����������� 0.000002 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='delete_output_dir' scope='session' baseid=''> ����������� 0.000002 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='pytestconfig' scope='session' baseid=''> ����������� 0.000002 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='_verify_url' scope='session' baseid=''> ����������� 0.000002 ������
+2025-01-19 14:22:14,357 DEBUG �������� (teardown) <FixtureDef argname='_verify_url' scope='session' baseid=''> ����������� 0.000002 ������
+2025-01-19 14:22:14,358 DEBUG �������� (teardown) <FixtureDef argname='base_url' scope='session' baseid=''> ����������� 0.000002 ������
+2025-01-19 14:22:14,358 DEBUG �������� (teardown) <FixtureDef argname='_session_faker' scope='session' baseid=''> ����������� 0.000002 ������
+2025-01-19 14:22:14,359 DEBUG �������� HTTP-������
+2025-01-19 14:22:14,360 INFO ##### ����� �����: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 #####
