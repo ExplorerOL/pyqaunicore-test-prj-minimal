@@ -1,5 +1,5 @@
 import pytest
-from pyqaunicore.generators.number_generators import NumberGenerators
+from pyqaunicore.generators.generators import GeneratorsNumber
 
 from db.db_client.db_client import DBClient
 from db.models.input.db_model_input_users import DBModelInputUser
@@ -15,7 +15,7 @@ from fixtures.fixtures_db import (  # noqa: F401
 
 
 def creating_users_imitation(db_client: DBClient) -> list[DBModelOutputUser]:  # noqa: F811
-    users_count = NumberGenerators.generate_random_int(min_val=2, max_val=10)
+    users_count = GeneratorsNumber.generate_random_int(min_val=2, max_val=10)
     users = [DBModelInputUser(name=f'User{i}', age=20 + i) for i in range(users_count)]
     validated_users = DBModelOutputUsers.model_validate(users).root
     db_client.users.create_user(user_data=users)

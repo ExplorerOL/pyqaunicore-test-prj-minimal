@@ -2,7 +2,7 @@ import enum
 
 from pyqaunicore.api.rest.models.rest_models import RESTModelResponse
 from pyqaunicore.api.rest.rest_client_endpoint_base import RESTClientEndpointBase
-from pyqaunicore.operations.url_operations import UrlOperations
+from pyqaunicore.operations.operations_url import OperationsUrl
 
 
 class EndpointsUsers(enum.StrEnum):
@@ -17,7 +17,7 @@ class RESTClientUsers(RESTClientEndpointBase):
         return response
 
     def get_list_users(self, page: int, verify_status_code: bool = True) -> RESTModelResponse:
-        quety_params_str = UrlOperations.convert_dict_to_query_params({'page': str(page)})
+        quety_params_str = OperationsUrl.convert_dict_to_query_params({'page': str(page)})
         response = self._http_client.get(
             EndpointsUsers.USERS + quety_params_str, verify_status_code=verify_status_code
         )

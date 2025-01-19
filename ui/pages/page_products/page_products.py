@@ -1,4 +1,4 @@
-from pyqaunicore.exceptions.common_exceptions import NotExpectedValueError
+from pyqaunicore.exceptions.exceptions_common import NotExpectedValueError
 from pyqaunicore.ui import PageBase
 from pyqaunicore.ui.primitives import Label
 from pyqaunicore.ui.ui_engine.ui_engine_base import UIEngineBase

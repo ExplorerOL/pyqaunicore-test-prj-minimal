@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
-from pyqaunicore.operations.file_operations import FileOperations
+import pytest
+from pyqaunicore.operations.operations_file import OperationsFile
 
 from fixtures.fixtures_ui import page_auth, page_products  # noqa: F401
 from support.loggers.testrun_logger import logger
@@ -25,7 +26,7 @@ class TestExamplesVisual:
         # ACT
         screenshot_page_auth = page_auth.make_screenshot()
         # ASSERT
-        screenshot_name = FileOperations.generate_screenshot_name()
+        screenshot_name = OperationsFile.generate_screenshot_name()
         logger.debug('Имя базового скриншота = ' + screenshot_name)
         assert_snapshot(
             screenshot_page_auth,
@@ -34,6 +35,7 @@ class TestExamplesVisual:
             fail_fast=False,
         )
 
+    @pytest.mark.xfail(reason='Тест демонстрации отчета визуального тестирования')
     def test_visual_auth_page_failed(self, page_auth: PageAuth, assert_snapshot):  # noqa: F811
         """Провальный тест страницы авторизации"""
         # ARRANGE
@@ -41,7 +43,7 @@ class TestExamplesVisual:
         # ACT
         screenshot_page_auth = page_auth.make_screenshot()
         # ASSERT
-        screenshot_name = FileOperations.generate_screenshot_name()
+        screenshot_name = OperationsFile.generate_screenshot_name()
         logger.debug('Имя базового скриншота = ' + screenshot_name)
         assert_snapshot(
             screenshot_page_auth,

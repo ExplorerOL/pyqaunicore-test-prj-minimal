@@ -1,7 +1,7 @@
 import datetime
 
-from pyqaunicore.generators.number_generators import NumberGenerators
-from pyqaunicore.generators.string_generators import StringGenerators
+from pyqaunicore.generators.generators_number import GeneratorsNumber
+from pyqaunicore.generators.generators_string import GeneratorsString
 
 from api.ws.ws_client import WSClient
 from fixtures.fixtures_ws import ws_client_anonim  # noqa: F401
@@ -12,8 +12,8 @@ class TestExamplesWS:
     def test_get_echo_answer(self, ws_client_anonim: WSClient):  # noqa: F811
         """Получение ответа от сервера"""
         # ARRANGE
-        MSG_TEXT = StringGenerators.generate_random_string(
-            length=NumberGenerators.generate_random_int(min_val=1, max_val=100)
+        MSG_TEXT = GeneratorsString.generate_random_string(
+            length=GeneratorsNumber.generate_random_int(min_val=1, max_val=100)
         )
         logger.debug(MSG_TEXT)
         # ACT
