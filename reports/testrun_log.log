@@ -1,86 +1,19 @@
-2025-01-19 14:22:09,727 INFO Логгирование с помощью логгера LOGGING_LOGGER
-2025-01-19 14:22:09,727 INFO Задан новый логгер ядра: <pyqaunicore.loggers.logger_logging.LoggerLogging object at 0x000001BB9C6ACA10>
-2025-01-19 14:22:09,762 DEBUG Конфигурация базового url: https://www.saucedemo.com/
-2025-01-19 14:22:13,894 INFO >>>>> Начало теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 >>>>>
-2025-01-19 14:22:13,895 INFO Фикстура: faker.contrib.pytest.plugin::_session_faker
-2025-01-19 14:22:13,898 DEBUG Looking for locale `en_US` in provider `faker.providers.address`.
-2025-01-19 14:22:13,906 DEBUG Provider `faker.providers.address` has been localized to `en_US`.
-2025-01-19 14:22:13,908 DEBUG Looking for locale `en_US` in provider `faker.providers.automotive`.
-2025-01-19 14:22:13,914 DEBUG Provider `faker.providers.automotive` has been localized to `en_US`.
-2025-01-19 14:22:13,916 DEBUG Looking for locale `en_US` in provider `faker.providers.bank`.
-2025-01-19 14:22:13,921 DEBUG Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
-2025-01-19 14:22:13,922 DEBUG Looking for locale `en_US` in provider `faker.providers.barcode`.
-2025-01-19 14:22:13,923 DEBUG Provider `faker.providers.barcode` has been localized to `en_US`.
-2025-01-19 14:22:13,924 DEBUG Looking for locale `en_US` in provider `faker.providers.color`.
-2025-01-19 14:22:13,928 DEBUG Provider `faker.providers.color` has been localized to `en_US`.
-2025-01-19 14:22:13,929 DEBUG Looking for locale `en_US` in provider `faker.providers.company`.
-2025-01-19 14:22:13,934 DEBUG Provider `faker.providers.company` has been localized to `en_US`.
-2025-01-19 14:22:13,935 DEBUG Looking for locale `en_US` in provider `faker.providers.credit_card`.
-2025-01-19 14:22:13,936 DEBUG Provider `faker.providers.credit_card` has been localized to `en_US`.
-2025-01-19 14:22:13,937 DEBUG Looking for locale `en_US` in provider `faker.providers.currency`.
-2025-01-19 14:22:13,941 DEBUG Provider `faker.providers.currency` has been localized to `en_US`.
-2025-01-19 14:22:13,941 DEBUG Looking for locale `en_US` in provider `faker.providers.date_time`.
-2025-01-19 14:22:13,946 DEBUG Provider `faker.providers.date_time` has been localized to `en_US`.
-2025-01-19 14:22:13,947 DEBUG Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-2025-01-19 14:22:13,947 DEBUG Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-2025-01-19 14:22:13,948 DEBUG Looking for locale `en_US` in provider `faker.providers.geo`.
-2025-01-19 14:22:13,949 DEBUG Provider `faker.providers.geo` has been localized to `en_US`.
-2025-01-19 14:22:13,950 DEBUG Looking for locale `en_US` in provider `faker.providers.internet`.
-2025-01-19 14:22:13,956 DEBUG Provider `faker.providers.internet` has been localized to `en_US`.
-2025-01-19 14:22:13,957 DEBUG Looking for locale `en_US` in provider `faker.providers.isbn`.
-2025-01-19 14:22:13,958 DEBUG Provider `faker.providers.isbn` has been localized to `en_US`.
-2025-01-19 14:22:13,959 DEBUG Looking for locale `en_US` in provider `faker.providers.job`.
-2025-01-19 14:22:13,963 DEBUG Provider `faker.providers.job` has been localized to `en_US`.
-2025-01-19 14:22:13,964 DEBUG Looking for locale `en_US` in provider `faker.providers.lorem`.
-2025-01-19 14:22:13,968 DEBUG Provider `faker.providers.lorem` has been localized to `en_US`.
-2025-01-19 14:22:13,968 DEBUG Looking for locale `en_US` in provider `faker.providers.misc`.
-2025-01-19 14:22:13,968 DEBUG Provider `faker.providers.misc` has been localized to `en_US`.
-2025-01-19 14:22:13,969 DEBUG Looking for locale `en_US` in provider `faker.providers.passport`.
-2025-01-19 14:22:13,970 DEBUG Provider `faker.providers.passport` has been localized to `en_US`.
-2025-01-19 14:22:13,971 DEBUG Looking for locale `en_US` in provider `faker.providers.person`.
-2025-01-19 14:22:13,979 DEBUG Provider `faker.providers.person` has been localized to `en_US`.
-2025-01-19 14:22:13,983 DEBUG Looking for locale `en_US` in provider `faker.providers.phone_number`.
-2025-01-19 14:22:13,992 DEBUG Provider `faker.providers.phone_number` has been localized to `en_US`.
-2025-01-19 14:22:13,994 DEBUG Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-2025-01-19 14:22:13,994 DEBUG Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-2025-01-19 14:22:13,994 DEBUG Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-2025-01-19 14:22:13,994 DEBUG Looking for locale `en_US` in provider `faker.providers.ssn`.
-2025-01-19 14:22:14,000 DEBUG Provider `faker.providers.ssn` has been localized to `en_US`.
-2025-01-19 14:22:14,002 DEBUG Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-2025-01-19 14:22:14,002 DEBUG Фикстура (setup) <FixtureDef argname='_session_faker' scope='session' baseid=''> выполнялась 0.107035 секунд
-2025-01-19 14:22:14,002 INFO Фикстура: pytest_base_url.plugin::base_url
-2025-01-19 14:22:14,002 DEBUG Фикстура (setup) <FixtureDef argname='base_url' scope='session' baseid=''> выполнялась 0.000113 секунд
-2025-01-19 14:22:14,002 INFO Фикстура: pytest_base_url.plugin::_verify_url
-2025-01-19 14:22:14,002 DEBUG Фикстура (setup) <FixtureDef argname='_verify_url' scope='session' baseid=''> выполнялась 0.000178 секунд
-2025-01-19 14:22:14,003 INFO Фикстура: _pytest.fixtures::pytestconfig
-2025-01-19 14:22:14,003 DEBUG Фикстура (setup) <FixtureDef argname='pytestconfig' scope='session' baseid=''> выполнялась 0.000228 секунд
-2025-01-19 14:22:14,003 INFO Фикстура: pytest_playwright.pytest_playwright::delete_output_dir
-2025-01-19 14:22:14,004 DEBUG Фикстура (setup) <FixtureDef argname='delete_output_dir' scope='session' baseid=''> выполнялась 0.001313 секунд
-2025-01-19 14:22:14,004 INFO Фикстура: fixtures.fixtures_rest::http_req_sender
-2025-01-19 14:22:14,005 DEBUG Инициализация отправителя HTTP-запросов на основе библиотеки Requests
-2025-01-19 14:22:14,005 DEBUG Фикстура (setup) <FixtureDef argname='http_req_sender' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000334 секунд
-2025-01-19 14:22:14,005 INFO Фикстура: fixtures.fixtures_rest::http_client
-2025-01-19 14:22:14,005 DEBUG Инициализация HTTP-клиента
-2025-01-19 14:22:14,005 DEBUG Фикстура (setup) <FixtureDef argname='http_client' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000182 секунд
-2025-01-19 14:22:14,005 INFO Фикстура: fixtures.fixtures_rest::rest_client_anonim
-2025-01-19 14:22:14,005 DEBUG Фикстура (setup) <FixtureDef argname='rest_client_anonim' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000135 секунд
-2025-01-19 14:22:14,006 DEBUG Метод: api.rest.rest_client_users -> RESTClientUsers -> get_single_user с аргументами: (<api.rest.rest_client_users.RESTClientUsers object at 0x000001BB9CA574D0>,) {'user_id': 10}
-2025-01-19 14:22:14,006 DEBUG Отправка GET запроса на api/users/10 | Куки: None | Заголовки: None
-2025-01-19 14:22:14,008 DEBUG Starting new HTTPS connection (1): reqres.in:443
-2025-01-19 14:22:14,347 DEBUG https://reqres.in:443 "GET /api/users/10 HTTP/1.1" 200 None
-2025-01-19 14:22:14,347 DEBUG Код ответа: 200 | Тело ответа: {"data":{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
-2025-01-19 14:22:14,353 DEBUG ===== Результат теста: PASSED =====
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='rest_client_anonim' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000004 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='rest_client_anonim' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='http_client' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000003 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='http_client' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000003 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='http_req_sender' scope='session' baseid='tests/test_examples_rest.py'> выполнялась 0.000005 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='delete_output_dir' scope='session' baseid=''> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='delete_output_dir' scope='session' baseid=''> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='pytestconfig' scope='session' baseid=''> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='_verify_url' scope='session' baseid=''> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,357 DEBUG Фикстура (teardown) <FixtureDef argname='_verify_url' scope='session' baseid=''> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,358 DEBUG Фикстура (teardown) <FixtureDef argname='base_url' scope='session' baseid=''> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,358 DEBUG Фикстура (teardown) <FixtureDef argname='_session_faker' scope='session' baseid=''> выполнялась 0.000002 секунд
-2025-01-19 14:22:14,359 DEBUG Закрытие HTTP-сессии
-2025-01-19 14:22:14,360 INFO ##### Конец теста: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 #####
+2025-01-19 14:26:16.677 | DEBUG    | support.loggers.testrun_logger:<module>:10 - Р›РѕРіРіРёСЂРѕРІР°РЅРёРµ СЃ СѓСЂРѕРІРЅРµРј TRACE РЅР°С‡Р°С‚Рѕ СЃ РїРѕРјРѕС‰СЊСЋ Р»РѕРіРіРµСЂР° LOGURU_LOGGER
+2025-01-19 14:26:16.678 | INFO     | pyqaunicore.config.config_core:logger:26 - Р—Р°РґР°РЅ РЅРѕРІС‹Р№ Р»РѕРіРіРµСЂ СЏРґСЂР°: <pyqaunicore.loggers.logger_loguru.LoggerLoguru object at 0x0000027635961150>
+2025-01-19 14:26:16.717 | DEBUG    | config.config_init:init_config:19 - РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ Р±Р°Р·РѕРІРѕРіРѕ url: https://www.saucedemo.com/
+2025-01-19 14:26:20.860 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logstart:26 - >>>>> РќР°С‡Р°Р»Рѕ С‚РµСЃС‚Р°: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 >>>>>
+2025-01-19 14:26:20.860 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: faker.contrib.pytest.plugin::_session_faker
+2025-01-19 14:26:20.972 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: pytest_base_url.plugin::base_url
+2025-01-19 14:26:20.973 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: pytest_base_url.plugin::_verify_url
+2025-01-19 14:26:20.973 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: _pytest.fixtures::pytestconfig
+2025-01-19 14:26:20.974 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: pytest_playwright.pytest_playwright::delete_output_dir
+2025-01-19 14:26:20.974 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: fixtures.fixtures_rest::http_req_sender
+2025-01-19 14:26:20.974 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:__init__:23 - РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РѕС‚РїСЂР°РІРёС‚РµР»СЏ HTTP-Р·Р°РїСЂРѕСЃРѕРІ РЅР° РѕСЃРЅРѕРІРµ Р±РёР±Р»РёРѕС‚РµРєРё Requests
+2025-01-19 14:26:20.974 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: fixtures.fixtures_rest::http_client
+2025-01-19 14:26:20.974 | DEBUG    | pyqaunicore.api.rest.http_client:__init__:22 - РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ HTTP-РєР»РёРµРЅС‚Р°
+2025-01-19 14:26:20.975 | FIXTURE  | _pytest.fixtures:call_fixture_func:907 - Р¤РёРєСЃС‚СѓСЂР°: fixtures.fixtures_rest::rest_client_anonim
+2025-01-19 14:26:20.975 | DEBUG    | pyqaunicore.api.rest.http_client:get:73 - РћС‚РїСЂР°РІРєР° GET Р·Р°РїСЂРѕСЃР° РЅР° api/users/10 | РљСѓРєРё: None | Р—Р°РіРѕР»РѕРІРєРё: None
+2025-01-19 14:26:21.159 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:send_request:84 - РљРѕРґ РѕС‚РІРµС‚Р°: 200 | РўРµР»Рѕ РѕС‚РІРµС‚Р°: {"data":{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
+2025-01-19 14:26:21.160 | DEBUG    | pyqaunicore.reporters.pytest_html.pytest_html_functions:add_test_result_data_into_report:83 - ===== Р РµР·СѓР»СЊС‚Р°С‚ С‚РµСЃС‚Р°: PASSED =====
+2025-01-19 14:26:21.170 | DEBUG    | pyqaunicore.api.rest.http_req_sender_requests:__del__:29 - Р—Р°РєСЂС‹С‚РёРµ HTTP-СЃРµСЃСЃРёРё
+2025-01-19 14:26:21.171 | TEST     | pyqaunicore.testrunners.pytest.pytest_hooks:pytest_runtest_logfinish:31 - ##### РљРѕРЅРµС† С‚РµСЃС‚Р°: tests/test_examples_rest.py::TestExamplesREST::test_get_single_user_data:22 #####
