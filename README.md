@@ -2,5 +2,5 @@
 
 ## Запуск тестов
 ```
-./venv
+.venv\Scripts\python.exe -m pytest -v
 ```
