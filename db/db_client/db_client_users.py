@@ -4,7 +4,7 @@ from typing import Sequence
 
 from pyqaunicore.db.sql_db_client_item_base import SqlDBClientItemBase
 
-from db.models.input.db_model_input_users import DBModelUser
+from db.models.db_models_users import DBModelUser
 
 
 class DBClientUsers(SqlDBClientItemBase):
@@ -20,14 +20,14 @@ class DBClientUsers(SqlDBClientItemBase):
             user_data = [user_data]
         self._db_adapter.exec_insert(elems=tuple(user_data))
 
-    def get_all_users(self) -> list[DBModelUser]:
+    def get_all_users(self) -> tuple[DBModelUser, ...]:
         """Получение всех пользователей из БД
 
         Возвращаемые значения:
             tuple: Модель списка пользователей
         """
         statement = self._db_adapter.select_statement(DBModelUser)
-        users = list(self._db_adapter.exec_select(statement))
+        users = self._db_adapter.exec_select(statement)
         return users
 
     def delete_all_users(self):

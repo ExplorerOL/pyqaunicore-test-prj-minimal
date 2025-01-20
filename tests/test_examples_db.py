@@ -6,11 +6,7 @@ from pyqaunicore.assertions import assert_soft
 from pyqaunicore.generators.generators import GeneratorsNumber
 
 from db.db_client.db_client import DBClient
-from db.models.input.db_model_input_users import DBModelUser
-from db.models.output.db_model_output_users import (
-    DBModelOutputUsers,
-    DBModelUser,
-)
+from db.models.db_models_users import DBModelUser
 from fixtures.fixtures_db import (  # noqa: F401
     create_empty_user_table,
     db_adapter,
@@ -22,9 +18,7 @@ from support.loggers.testrun_logger import logger
 def creating_users_imitation(db_client: DBClient) -> list[DBModelUser]:  # noqa: F811
     users_count = GeneratorsNumber.generate_random_int(min_val=2, max_val=10)
     users = [DBModelUser(name=f'User{i}', age=20 + i) for i in range(users_count)]
-    # validated_users = DBModelOutputUsers.model_validate(users).root
     db_client.users.create_user(user_data=users)
-    logger.debug(f'Созданы пользователи: {users[0].name}')
     return users
 
 
@@ -38,17 +32,12 @@ class TestExamplesDB:
         created_users = creating_users_imitation(db_client=db_client)
         # ASSERT
         actual_users_raw = db_client.users.get_all_users()
-        logger.debug(f'Получены пользователи: {actual_users_raw[0].name}')
-        # actual_users = DBModelOutputUsers.model_validate(actual_users_raw).root
 
-        # assert len(created_users) == len(
-        #     actual_users_raw
-        # ), 'Количество пользователей в БД не равно ожидаемому!'
+        assert len(created_users) == len(
+            actual_users_raw
+        ), 'Количество пользователей в БД не равно ожидаемому!'
+
         for expected_user, actual_user in list(zip_longest(created_users, actual_users_raw)):
-            # with assert_soft:
-            #     assert expected_user.name == "Hello1"
-            # with assert_soft:
-            #     assert actual_user.name == "Hello2"
             with assert_soft:
                 assert expected_user.name == actual_user.name
             with assert_soft:
