@@ -16,8 +16,8 @@ from pyqaunicore.testrunners.pytest.pytest_hooks import (  # noqa: F401
 from config.config_general import config_general
 from support.loggers.testrun_logger import logger
 
-#Задание логгера ядра
-config_core.logger = logger # LoggerLoguru(log_file_path=config_core.log_file_path)
+# Задание логгера ядра
+config_core.logger = logger
 
 # Определение значения переменной окружения для уровня логирования логгера и БД
 config_general.log_deep_trace = os.environ.get('TESTS_LOG_DEEP_TRACE') in (1, '1', 'true', 'True')

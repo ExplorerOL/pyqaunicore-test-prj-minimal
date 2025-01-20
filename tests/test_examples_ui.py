@@ -75,9 +75,9 @@ class TestExamplesUI:
         visible_products_count = page_products.get_products_cards_count()
         logger.info(f'Количество видимых карточек товаров: {visible_products_count}')
         # ASSERT
-        assert (
-            visible_products_count == EXPECTED_CARDS_COUNT
-        ), 'Количество видимых карточек товаров не соответствует ожидаемому!'
+        assert visible_products_count == EXPECTED_CARDS_COUNT, (
+            'Количество видимых карточек товаров не соответствует ожидаемому!'
+        )
 
     def test_get_all_product_cards(self, page_auth: PageAuth, page_products: PageProducts):  # noqa: F811
         """Названия всех продуктов в карточках"""

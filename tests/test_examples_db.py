@@ -1,4 +1,3 @@
-import copy
 from itertools import zip_longest
 
 import pytest
@@ -12,7 +11,6 @@ from fixtures.fixtures_db import (  # noqa: F401
     db_adapter,
     db_client,
 )
-from support.loggers.testrun_logger import logger
 
 
 def creating_users_imitation(db_client: DBClient) -> list[DBModelUser]:  # noqa: F811
@@ -33,9 +31,9 @@ class TestExamplesDB:
         # ASSERT
         actual_users_raw = db_client.users.get_all_users()
 
-        assert len(created_users) == len(
-            actual_users_raw
-        ), 'Количество пользователей в БД не равно ожидаемому!'
+        assert len(created_users) == len(actual_users_raw), (
+            'Количество пользователей в БД не равно ожидаемому!'
+        )
 
         for expected_user, actual_user in list(zip_longest(created_users, actual_users_raw)):
             with assert_soft:
