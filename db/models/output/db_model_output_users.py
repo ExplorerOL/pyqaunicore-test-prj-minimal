@@ -1,11 +1,11 @@
 from pyqaunicore.validators.validator_pydantic import ValidatorPydantic
 
-from db.models.input.db_model_input_users import DBModelInputUser
+from db.models.input.db_model_input_users import DBModelUser
 
 
-class DBModelOutputUser(DBModelInputUser, ValidatorPydantic.BaseModel):
+class DBModelUserO(DBModelUser, ValidatorPydantic.BaseModel):
     pass
 
 
 class DBModelOutputUsers(ValidatorPydantic.RootModel):
-    root: list[DBModelOutputUser]
+    root: list[DBModelUserO]
