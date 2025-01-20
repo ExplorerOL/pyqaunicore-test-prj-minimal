@@ -30,6 +30,4 @@ if config_general.log_deep_trace:
 
 pytest_plugins = [
     'testrunner.pytest_hooks',
-    # 'pyqaunicore.ui.ui_engine.selene_bindings.selene_fixtures_web',  # добавить при использовании Selene
-    # 'pyqaunicore.ui.ui_engine.selene_bindings.selene_fixtures_electron',  # добавить при использовании Selene с Electron
 ]
