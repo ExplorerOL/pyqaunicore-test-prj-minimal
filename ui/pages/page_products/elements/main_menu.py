@@ -1,7 +1,7 @@
 # from pyqaunicore.templates.prj_minimal.support.loggers.testrun_logger import logger
-from pyqaunicore.ui.datatypes.ui_datatypes import GetPageFunc
+from pyqaunicore.ui.datatypes.ui_datatypes import UIGetViewFunc
 from pyqaunicore.ui.elements.menu import Menu
-from pyqaunicore.ui.ui_engine.ui_engine_base import UIEngineBase
+from pyqaunicore.ui.ui_engine.protocols.ui_engine_protocol import UIEngineProtocol
 
 from ui.pages.page_products.elements.main_menu_items import MainMenuItems
 
@@ -12,8 +12,8 @@ class MainMenu(Menu):
 
     def __init__(
         self,
-        page: UIEngineBase.Page | GetPageFunc,
-        expect: UIEngineBase.Expect,
+        view: UIEngineProtocol.View | UIGetViewFunc,
+        expect: UIEngineProtocol.Expect,
         selector: str,
         btn_open_close_selector: str,
         iframe_name: str | None = None,
@@ -21,7 +21,7 @@ class MainMenu(Menu):
         name_in_log: str | None = None,
     ):
         super().__init__(
-            page=page,
+            view=view,
             expect=expect,
             selector=selector,
             btn_open_close_selector=btn_open_close_selector,
@@ -30,7 +30,7 @@ class MainMenu(Menu):
         )
 
         self.__menu_items = MainMenuItems(
-            page=page,
+            view=view,
             expect=expect,
             selector=self.S_MENU_ITEMS,
         )
@@ -49,7 +49,7 @@ class MainMenu(Menu):
         Возвращаемые значения:
             int: Количество элементов меню
         """
-        return self._page.locator(self.S_MENU_ITEM).count()
+        return self._view.locator(self.S_MENU_ITEM).count()
 
     def get_items_names(self) -> list[str]:
         """Количество элементов меню
@@ -57,7 +57,7 @@ class MainMenu(Menu):
         Возвращаемые значения:
             int: Количество элементов меню
         """
-        return [str(locator.text_content()).strip() for locator in self._page.locator(self.S_MENU_ITEM).all()]
+        return [str(locator.text_content()).strip() for locator in self._view.locator(self.S_MENU_ITEM).all()]
 
     def is_btn_open_close_visible(self) -> bool:
         if self._btn_open_close.is_visible():

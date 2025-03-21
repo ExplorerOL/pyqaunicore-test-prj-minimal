@@ -3,7 +3,7 @@ from typing import Self
 from pyqaunicore.ui import PageBase
 from pyqaunicore.ui.primitives import Button, Input
 from pyqaunicore.ui.primitives.label import Label
-from pyqaunicore.ui.ui_engine.ui_engine_base import UIEngineBase
+from pyqaunicore.ui.ui_engine.protocols.ui_engine_protocol import UIEngineProtocol
 
 
 class PageAuth(PageBase):
@@ -13,30 +13,30 @@ class PageAuth(PageBase):
 
     S_LBL_AUTH_ERROR = '[data-test="error"]'
 
-    def __init__(self, page: UIEngineBase.Page, expect: UIEngineBase.Expect, url: str, title: str):
-        super().__init__(page=page, expect=expect, url=url, title=title)
+    def __init__(self, view: UIEngineProtocol.View, expect: UIEngineProtocol.Expect, url: str, title: str):
+        super().__init__(view=view, expect=expect, url=url, title=title)
 
         self.__input_username = Input(
-            page=self._page,
+            view=self._view,
             selector=self.S_INPUT_LOGIN,
             expect=self._expect,
             name_in_log='Поле ввода имени пользователя',
         )
         self.__input_password = Input(
-            page=self._page,
+            view=self._view,
             selector=self.S_INPUT_PASSWORD,
             expect=self._expect,
             name_in_log='Поле ввода пароля',
         )
         self.__btn_login = Button(
-            page=self._page,
+            view=self._view,
             selector=self.S_BTN_LOGIN,
             expect=self._expect,
             name_in_log='Кнопка входа',
         )
 
         self.__lbl_auth_error = Label(
-            page=self._page,
+            view=self._view,
             selector=self.S_LBL_AUTH_ERROR,
             expect=self._expect,
             name_in_log='Надпись об ошибке авторизации',

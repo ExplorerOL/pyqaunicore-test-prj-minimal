@@ -7,9 +7,9 @@ from ui.ui_engine import UIEngine
 
 
 @pytest.fixture
-def page_auth(page):
+def page_auth(view):
     return PageAuth(
-        page=page,
+        view=view,
         expect=UIEngine.Expect(),  # type: ignore
         url=config_general.base_url,
         title='Swag Labs',
@@ -17,9 +17,9 @@ def page_auth(page):
 
 
 @pytest.fixture
-def page_products(page):
+def page_products(view):
     return PageProducts(
-        page=page,
+        view=view,
         expect=UIEngine.Expect(),  # type: ignore
         url=f'{config_general.base_url}inventory.html',
         title='Swag Labs',

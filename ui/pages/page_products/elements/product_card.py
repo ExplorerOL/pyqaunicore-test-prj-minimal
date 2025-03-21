@@ -14,7 +14,7 @@ class ProductCard(Container):
 
     def __init__(
         self,
-        page,
+        view,
         expect,
         selector,
         text: str | None = None,
@@ -22,7 +22,7 @@ class ProductCard(Container):
     ):
         logger.deep_trace('ProductCard.__init__')
         super().__init__(
-            page=page,
+            view=view,
             expect=expect,
             selector=selector,
             text=text,
@@ -30,31 +30,31 @@ class ProductCard(Container):
         )
 
         self._btn_add_to_cart = Button(
-            page=page,
+            view=view,
             expect=expect,
             selector=self.S_BTN_ADD_TO_CART,
             name_in_log='Кнопка добавления в корзину',
         )
         self._lbl_price = Label(
-            page=page,
+            view=view,
             expect=expect,
             selector=f'{self._selector} {self.S_LBL_PRICE}',
             name_in_log='Надпись цена',
         )
         self._lbl_name = Label(
-            page=page,
+            view=view,
             expect=expect,
             selector=f'{self._selector} {self.S_LBL_ITEM_NAME}',
             name_in_log='Надпись названия товара',
         )
         self._lbl_desc = Label(
-            page=page,
+            view=view,
             expect=expect,
             selector=f'{self._selector} {self.S_LBL_ITEM_DESC}',
             name_in_log='Надпись описания товара',
         )
         self._img_item = Image(
-            page=page,
+            view=view,
             expect=expect,
             selector=self.S_IMG_ITEM,
             name_in_log='Картинка товара',
