@@ -13,18 +13,6 @@ from pyqaunicore.testrunners.pytest.pytest_hooks import (  # noqa: F401
     pytest_runtest_makereport,
 )
 
-# раскомментировать при использовании Selene
-from pyqaunicore.ui.ui_engine.bindings_selene.selene_fixtures_web import (
-    browser,
-    browser_context_args,
-    browser_launch_options,
-    context,
-    pytest_addoption,
-    view,
-)
-
-# раскомментировать при использовании Playwright
-# from pyqaunicore.ui.ui_engine.bindings_playwright.playwright_fixtures_web import view
 from support.loggers.testrun_logger import logger
 
 # Задание логгера ядра
@@ -41,4 +29,8 @@ if tests_log_level is not None:
 
 pytest_plugins = [
     'testrunner.pytest_hooks',
+    # раскомментировать для работы с Selene
+    'pyqaunicore.ui.ui_engine.bindings_selene.selene_fixtures_web',
+    # раскомментировать для работы с Playwright
+    # 'pyqaunicore.ui.ui_engine.bindings_playwright.playwright_fixtures_web',
 ]
