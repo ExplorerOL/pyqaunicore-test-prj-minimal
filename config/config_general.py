@@ -10,7 +10,7 @@ class ConfigGeneral:
     def __init__(self):
         self._base_url = 'https://www.saucedemo.com/'
         self._reports_dir = Path('./reports')
-        self.__tests_snapshots_dir = self._reports_dir.joinpath('snapshot_tests_failures')
+        self.__tests_screenshots_dir = self._reports_dir.joinpath('screenshot_tests_failures')
         self.__log_file_path = self._reports_dir.joinpath('testrun_log.log')
         self.__log_deep_trace = False
         self.__db_conn_string = 'sqlite:///.database.db'
@@ -30,8 +30,8 @@ class ConfigGeneral:
         return self.__log_file_path
 
     @property
-    def failed_tests_snapshots_path(self):
-        return self.__tests_snapshots_dir
+    def failed_tests_screenshots_path(self):
+        return self.__tests_screenshots_dir
 
     @property
     def log_deep_trace(self):

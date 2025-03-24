@@ -19,7 +19,7 @@ creds_standart_user = AuthCreds(username='standard_user', password='secret_sauce
 
 
 class TestExamplesVisual:
-    def test_visual_auth_page(self, page_auth: PageAuth, assert_snapshot):  # noqa: F811
+    def test_visual_auth_page(self, page_auth: PageAuth, assert_screenshot):  # noqa: F811
         """Визуальный тест страницы авторизации"""
         # ARRANGE
         page_auth.navigate()
@@ -28,7 +28,7 @@ class TestExamplesVisual:
         # ASSERT
         screenshot_name = OperationsFile.generate_screenshot_name()
         logger.debug('Имя базового скриншота = ' + screenshot_name)
-        assert_snapshot(
+        assert_screenshot(
             screenshot_page_auth,
             threshold=0.12,
             name=screenshot_name,
@@ -36,7 +36,7 @@ class TestExamplesVisual:
         )
 
     @pytest.mark.xfail(reason='Тест демонстрации отчета визуального тестирования')
-    def test_visual_auth_page_failed(self, page_auth: PageAuth, assert_snapshot):  # noqa: F811
+    def test_visual_auth_page_failed(self, page_auth: PageAuth, assert_screenshot):  # noqa: F811
         """Провальный тест страницы авторизации"""
         # ARRANGE
         page_auth.navigate()
@@ -45,7 +45,7 @@ class TestExamplesVisual:
         # ASSERT
         screenshot_name = OperationsFile.generate_screenshot_name()
         logger.debug('Имя базового скриншота = ' + screenshot_name)
-        assert_snapshot(
+        assert_screenshot(
             screenshot_page_auth,
             threshold=0.12,
             name=screenshot_name,

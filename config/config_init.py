@@ -23,4 +23,4 @@ def init_reporter(pytest_config) -> None:
     ReporterPytestHtml.add_host_environment_data_and_sw_info_into_report(pytest_config)
 
     # добавление атрибута с путем для скриншотов для плагина pytest-playwright-visual в объект pytest
-    setattr(pytest, 'snapshot_failures_path', config_general.failed_tests_snapshots_path)
+    setattr(pytest, 'screenshot_failures_path', config_general.failed_tests_screenshots_path)
