@@ -22,5 +22,5 @@ def init_reporter(pytest_config) -> None:
     ReporterPytestHtml.aut_info_for_report_dict = config_general.aut_info_for_report_dict
     ReporterPytestHtml.add_host_environment_data_and_sw_info_into_report(pytest_config)
 
-    # добавление атрибута с путем для скриншотов для плагина pytest-playwright-visual в объект pytest
+    # добавление атрибута с путем для скриншотов для плагина pytest-asser-screenshot в объект pytest
     setattr(pytest, 'screenshot_failures_path', config_general.failed_tests_screenshots_path)
