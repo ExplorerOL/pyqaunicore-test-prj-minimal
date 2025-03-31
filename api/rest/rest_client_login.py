@@ -1,6 +1,6 @@
 import enum
 
-from pyqaunicore.api.rest.models.rest_models import RESTModelResponse
+from pyqaunicore.api.http.models.http_models import HTTPModelResponse
 from pyqaunicore.api.rest.rest_client_endpoint_base import RESTClientEndpointBase
 
 from support.loggers.testrun_logger import logger
@@ -11,7 +11,7 @@ class EndpointsLogin(enum.StrEnum):
 
 
 class RESTClientLogin(RESTClientEndpointBase):
-    def login(self, email: str, password: str, verify_status_code: bool = True) -> RESTModelResponse:
+    def login(self, email: str, password: str, verify_status_code: bool = True) -> HTTPModelResponse:
         """Получение токена авторизации
 
         Args:

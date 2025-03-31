@@ -1,9 +1,9 @@
 from pyqaunicore.api import GetValidCookiesFunc
 from pyqaunicore.api.ws.datatypes.ws_datatypes import GetWSConnDataFunc
-from pyqaunicore.api.ws.ws_client_item_websockets import WSClientItemWebsockets
+from pyqaunicore.api.ws.ws_client_endpoint_websockets import WSClientEndpointWebsockets
 
 
-class WSClientEndpoint(WSClientItemWebsockets):
+class WSClientEndpoint(WSClientEndpointWebsockets):
     def __init__(
         self,
         uri: str,

@@ -1,4 +1,4 @@
-from pyqaunicore.api.rest.http_client import HTTPClient
+from pyqaunicore.api.http.http_client import HTTPClient
 from pyqaunicore.api.rest.rest_client_base import RESTClientBase
 from pyqaunicore.models.auth.models_auth import ModelAuthUsernamePassword
 
