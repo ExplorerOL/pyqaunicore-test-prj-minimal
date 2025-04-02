@@ -1,7 +1,8 @@
 import pytest
 from pyqaunicore.api import HTTPClient, HTTPReqSenderBase
-from pyqaunicore.api.http.http_req_sender_requests import HTTPReqSenderRequests as HTTPReqSender
+from pyqaunicore.api import HTTPReqSenderRequests as HTTPReqSender
 
+# from pyqaunicore.api import HTTPReqSenderAiohttp as HTTPReqSender
 # from pyqaunicore.api import HTTPReqSenderHttpx as HTTPReqSender
 from api.rest.rest_client import RESTClient
 
@@ -14,10 +15,10 @@ def http_req_sender() -> HTTPReqSenderBase:
 
 
 @pytest.fixture(scope='session')
-def http_client(http_req_sender) -> HTTPClient:
+def http_client(http_req_sender: HTTPReqSenderBase) -> HTTPClient:
     return HTTPClient(http_req_sender=http_req_sender, base_url=BASE_URL)
 
 
 @pytest.fixture(scope='session')
-def rest_client_anonim(http_client) -> RESTClient:
+def rest_client_anonim(http_client: HTTPClient) -> RESTClient:
     return RESTClient(http_client=http_client, auth_creds=None)

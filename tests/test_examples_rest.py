@@ -24,11 +24,14 @@ class TestExamplesREST:
         assert response_json['token'] == 'QpwL5tke4Pnpja7X4'
 
     def test_get_single_user_data(self, rest_client_anonim: RESTClient):  # noqa: F811
+        """Получение данных пользователя"""
         # ARRANGE
         USER_ID = 10
         # ACT
-        response = rest_client_anonim.users.get_single_user(user_id=USER_ID)
+        response = rest_client_anonim.users.get_single_user(user_id=USER_ID, verify_status_code=False)
         # ASSERT
+        assert response.status_code == HTTPStatus.OK, f'Статус код не соответствует {HTTPStatus.OK}'
+
         user = APIModelOutputUser.model_validate_json(response.text)
         assert user.data.id == USER_ID, 'Поле id не соответствует ожидаемому'
 
@@ -43,10 +46,11 @@ class TestExamplesREST:
         )
 
     def test_get_single_user_list(self, rest_client_anonim: RESTClient):  # noqa: F811
+        """Получение данных пользователей на странице"""
         # ARRANGE
         PAGE_NUM = 2
         # ACT
-        response = rest_client_anonim.users.get_list_users(page=PAGE_NUM)
+        response = rest_client_anonim.users.get_users_list(page=PAGE_NUM)
         # ASSERT
         body = json.loads(response.text)
         with assert_soft:

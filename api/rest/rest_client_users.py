@@ -16,7 +16,7 @@ class RESTClientUsers(RESTClientEndpointBase):
         )
         return response
 
-    def get_list_users(self, page: int, verify_status_code: bool = True) -> HTTPModelResponse:
+    def get_users_list(self, page: int, verify_status_code: bool = True) -> HTTPModelResponse:
         quety_params_str = OperationsUrl.convert_dict_to_query_params({'page': str(page)})
         response = self._http_client.get(
             EndpointsUsers.USERS + quety_params_str, verify_status_code=verify_status_code

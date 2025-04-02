@@ -30,7 +30,7 @@ if tests_log_level is not None:
 pytest_plugins = [
     'testrunner.pytest_hooks',
     # раскомментировать для работы с Selene
-    # 'pyqaunicore.ui.ui_engine.bindings_selene.selene_fixtures_web',
+    'pyqaunicore.ui.ui_engine.bindings_selene.selene_fixtures_web',
     # раскомментировать для работы с Playwright
-    'pyqaunicore.ui.ui_engine.bindings_playwright.playwright_fixtures_web',
+    # 'pyqaunicore.ui.ui_engine.bindings_playwright.playwright_fixtures_web',
 ]

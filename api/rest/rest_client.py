@@ -7,7 +7,11 @@ from api.rest.rest_client_users import RESTClientUsers
 
 
 class RESTClient(RESTClientBase):
-    def __init__(self, http_client: HTTPClient, auth_creds: ModelAuthUsernamePassword | None):
+    def __init__(
+        self,
+        http_client: HTTPClient,
+        auth_creds: ModelAuthUsernamePassword | None,
+    ):
         super().__init__(http_client=http_client, auth_creds=auth_creds)
         self.auth = RESTClientLogin(http_client=http_client)
         self.users = RESTClientUsers(http_client=http_client)
