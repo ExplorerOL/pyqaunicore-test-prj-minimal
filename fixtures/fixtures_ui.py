@@ -1,26 +1,15 @@
 import pytest
 
-from config.config_general import config_general
-from ui.pages.page_auth import PageAuth
-from ui.pages.page_products.page_products import PageProducts
+from ui.ui_client import UIClient
 from ui.ui_engine import UIEngine
 
 
-@pytest.fixture
-def page_auth(view):
-    return PageAuth(
-        view=view,
-        expect=UIEngine.Expect(),  # type: ignore
-        url=config_general.base_url,
-        title='Swag Labs',
-    )
+@pytest.fixture(scope='session')
+def expect():
+    return UIEngine.Expect()
 
 
 @pytest.fixture
-def page_products(view):
-    return PageProducts(
-        view=view,
-        expect=UIEngine.Expect(),  # type: ignore
-        url=f'{config_general.base_url}inventory.html',
-        title='Swag Labs',
-    )
+def ui_client(expect, view):
+    ui_client = UIClient(expect=expect, view=view)
+    return ui_client
