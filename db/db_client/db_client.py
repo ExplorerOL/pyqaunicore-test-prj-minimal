@@ -11,5 +11,5 @@ class DBClient:
 
     def __init__(self, db_adapter: SqlDBAdapter):
         logger.debug('Инициализация клиента БД')
-        self.sql = DBClientSql(db_adapter)
-        self.users = DBClientUsers(db_adapter)
+        self.sql = DBClientSql(db_adapter=db_adapter)
+        self.users = DBClientUsers(db_adapter=db_adapter)
