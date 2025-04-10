@@ -16,6 +16,7 @@ def db_client(db_adapter) -> DBClient:
     return DBClient(db_adapter=db_adapter)
 
 
+# Создание тестовой таблицы
 @pytest.fixture(scope='session')
 def create_empty_user_table(db_client: DBClient) -> None:
     db_client.sql.exec_sql(

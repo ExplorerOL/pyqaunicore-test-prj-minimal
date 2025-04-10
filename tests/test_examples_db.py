@@ -29,13 +29,11 @@ class TestExamplesDB:
         # Действия через UI или API. Здесь - имитация действий.
         created_users = creating_users_imitation(db_client=db_client)
         # ASSERT
-        actual_users_raw = db_client.users.get_all_users()
+        actual_users = db_client.users.get_all_users()
 
-        assert len(created_users) == len(actual_users_raw), (
-            'Количество пользователей в БД не равно ожидаемому!'
-        )
+        assert len(created_users) == len(actual_users), 'Количество пользователей в БД не равно ожидаемому!'
 
-        for expected_user, actual_user in list(zip_longest(created_users, actual_users_raw)):
+        for expected_user, actual_user in list(zip_longest(created_users, actual_users)):
             with assert_soft:
                 assert expected_user.name == actual_user.name
             with assert_soft:
