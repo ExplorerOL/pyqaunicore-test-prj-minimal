@@ -1,6 +1,6 @@
 import pytest
 from pyqaunicore.api import HTTPClient, HTTPReqSenderBase
-from pyqaunicore.api import HTTPReqSenderRequests as HTTPReqSender
+from pyqaunicore.api.http.http_req_sender_requests import HTTPReqSenderRequests as HTTPReqSender
 
 # from pyqaunicore.api import HTTPReqSenderAiohttp as HTTPReqSender
 # from pyqaunicore.api import HTTPReqSenderHttpx as HTTPReqSender

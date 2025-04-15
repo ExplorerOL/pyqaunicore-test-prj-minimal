@@ -5,7 +5,7 @@ playwright~=1.35
 psutil~=5.9
 pytest~=7.2
 pydantic~=2.7
-pyqaunicore~=1.0
+pyqaunicore==1.1.1
 pytest-base-url~=2.0
 pytest-check~=2.3
 pytest-html~=4.1
